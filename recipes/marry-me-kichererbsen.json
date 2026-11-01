@@ -1,0 +1,30 @@
+{
+  "id": "marry-me-chickpeas",
+  "title": "Marry-Me-Chickpeas",
+  "category": "Hauptgericht",
+  "tags": ["Vegan", "Kichererbsen", "One-Pot"],
+  "description": "Cremig, würzig und mit Reis serviert.",
+  "servings": "8 Schüsseln",
+  "image": "images/marry-me-kichererbsen.jpg",
+  "imageAlt": "Cremige Marry-Me-Kichererbsen mit Tomaten und Spinat in einer Pfanne",
+  "ingredients": [
+    "6 Dosen Kichererbsen",
+    "1 Dose Kokosmilch",
+    "2 Tomaten, gewürfelt",
+    "1 1/2 EL Oregano",
+    "1/2 EL Thyiman",
+    "3 Chili",
+    "1 Knolle Knoblauch",
+    "1/4 TL Natron",
+    "5 Blöcke TK-Spinat",
+    "Basilikum",
+    "ca. 500 ml Gemüsebrühe oder Fond",
+    "4 Cups Reis"
+  ],
+  "steps": [
+    "Reis kochen.",
+    "Knoblauch, Oregano und Chili mit Kokosmilch und Brühe aufkochen.",
+    "Kichererbsen und Natron zugeben; 10 Minuten köcheln.",
+    "Spinat einrühren, zusammenfallen lassen und mit Basilikum abschmecken. Mit Reis servieren."
+  ]
+}
