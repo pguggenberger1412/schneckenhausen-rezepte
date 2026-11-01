@@ -1,0 +1,9 @@
+{
+  "id": "proteinpulver-eis",
+  "title": "Proteinpulver-Eis",
+  "category": "Dessert",
+  "tags": ["Eis", "Dessert", "Protein"],
+  "ingredients": [{ "name": "Basis Mischung", "recipeId": "basis-mischung" }, "55 g Proteinpulver"],
+  "steps": [],
+  "servings": "1 Becher"
+}

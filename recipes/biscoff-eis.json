@@ -1,0 +1,9 @@
+{
+  "id": "biscoff-eis",
+  "title": "Biscoff-Eis",
+  "category": "Dessert",
+  "tags": ["Eis", "Dessert", "Protein", "Biscoff"],
+  "ingredients": [{ "name": "Basis Mischung", "recipeId": "basis-mischung" }, "20 g Proteinpulver", "6 TL Biscoff-Creme"],
+  "steps": [],
+  "servings": "1 Becher"
+}

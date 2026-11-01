@@ -1,88 +1,144 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c4a3e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0'/><circle cx='10' cy='13' r='8'/><path d='M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 1 0-4 0v6'/><path d='M18 3 19.1 5.2'/><path d='M22 3 20.9 5.2'/></svg>">
-    <link rel="stylesheet" type="text/css" href="https://schneckenhausen.com/global.css">
-    <link rel="stylesheet" type="text/css" href="eis.css">
-    <title>Schneckenhausen | Eis-Rezepte</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232c4a3e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 1 0 4 0'/><circle cx='10' cy='13' r='8'/></svg>">
+    <link rel="stylesheet" href="https://schneckenhausen.com/global.css">
+    <link rel="stylesheet" href="rezepte.css">
+    <title>Schneckenhausen | Rezepte</title>
 </head>
-
 <body>
-
-    <!-- Standardisierter Header -->
     <header class="site-header">
         <a href="https://schneckenhausen.com" class="brand-link" title="Zurück zur Startseite">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="brand-icon">
-                <path d="M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0" />
-                <circle cx="10" cy="13" r="8" />
-                <path d="M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 1 0-4 0v6" />
-                <path d="M18 3 19.1 5.2" />
-                <path d="M22 3 20.9 5.2" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="brand-icon"><path d="M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 1 0 4 0"/><circle cx="10" cy="13" r="8"/><path d="M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 1 0-4 0v6"/><path d="M18 3 19.1 5.2"/><path d="M22 3 20.9 5.2"/></svg>
             <span class="brand-title">Schneckenhausen</span>
         </a>
     </header>
-
     <main class="container">
-        
         <div class="page-title">
-            <h1>Ninja Creami Eis-Rezepte</h1>
+            <h1>Rezepte</h1>
+            <p>Alle Lieblingsrezepte an einem Ort</p>
         </div>
 
-        <!-- Base -->
-        <article class="card">
-            <h2 class="card-title">Basis Mischung</h2>
+        <section class="filters" aria-label="Rezepte filtern">
+            <label class="search-label" for="recipe-search">Rezept suchen</label>
+            <input id="recipe-search" type="search" placeholder="Name, Zutat oder Tag …" autocomplete="off">
+            <div class="filter-heading"><h2>Tags</h2><button id="clear-filters" type="button">Filter zurücksetzen</button></div>
+            <div id="tag-filters" class="tag-filters" aria-label="Nach Tags filtern"></div>
+            <p id="result-count" class="result-count" aria-live="polite"></p>
+        </section>
 
-            <div class="recipe-section">
-                <h3>Zutaten</h3>
-                <ul class="ingredients-list">
-                    <li><strong>27 g</strong> Erythrit</li>
-                    <li><strong>18 g</strong> Xylit</li>
-                    <li><strong>7 g</strong> Inulin</li>
-                    <li><strong>1,5 g</strong> Salz</li>
-                    <li><strong>0,7 g</strong> Xanthan</li>
-                    <li><strong>X ml</strong> Hafermilch o. Ä. Auffüllen</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- Variante 1 -->
-        <article class="card">
-            <h2 class="card-title">Proteinpulver-Eis</h2>
-
-            <div class="recipe-section">
-                <h3>Zutaten</h3>
-                <ul class="ingredients-list">
-                    <li><strong>Basis Mischung</strong></li>
-                    <li><strong>55 g</strong> Proteinpulver</li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- Variante 2 -->
-        <article class="card">
-            <h2 class="card-title">Biscoff-Eis</h2>
-
-            <div class="recipe-section">
-                <h3>Zutaten</h3>
-                <ul class="ingredients-list">
-                    <li><strong>Basis Mischung</strong></li>
-                    <li><strong>20 g</strong> Proteinpulver</li>
-                    <li><strong>6 TL</strong> Biscoff-Creme</li>
-                </ul>
-            </div>
-        </article>
-
+        <section id="recipe-list" class="recipe-list" aria-label="Rezepte"></section>
     </main>
+    <footer><p>&copy; Schneckenhausen – Rezepte</p></footer>
 
-    <footer>
-        <p>&copy; Schneckenhausen - Eis-Rezepte</p>
-    </footer>
+    <script>
+        // Recipe data lives in individual JSON files listed in recipes/manifest.json.
+        let recipes = [];
 
+        const selectedTags = new Set();
+        const tagFilters = document.querySelector("#tag-filters");
+        const recipeList = document.querySelector("#recipe-list");
+        const search = document.querySelector("#recipe-search");
+
+        function renderTagFilters() {
+            const tags = [...new Set(recipes.flatMap(recipe => recipe.tags || []))].sort((a, b) => a.localeCompare(b, "de"));
+            tagFilters.innerHTML = tags.map(tag => `<label class="tag-option"><input type="checkbox" value="${escapeHtml(tag)}"><span>${escapeHtml(tag)}</span></label>`).join("");
+            tagFilters.addEventListener("change", event => {
+                if (event.target.matches("input[type=checkbox]")) {
+                    event.target.checked ? selectedTags.add(event.target.value) : selectedTags.delete(event.target.value);
+                    renderRecipes();
+                }
+            });
+        }
+
+        function escapeHtml(value) {
+            return String(value).replace(/[&<>"']/g, char => ({"&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"}[char]));
+        }
+
+        function ingredientText(item) {
+            return typeof item === "string" ? item : item.name;
+        }
+
+        function renderIngredient(item) {
+            const name = escapeHtml(ingredientText(item));
+            if (typeof item === "object" && recipes.some(recipe => recipe.id === item.recipeId)) {
+                return `<a class="recipe-link" href="#recipe-${escapeHtml(item.recipeId)}" data-recipe-link>${name}</a>`;
+            }
+            return name;
+        }
+
+        function renderRecipes() {
+            const query = search.value.trim().toLocaleLowerCase("de");
+            const matches = recipes.filter(recipe => {
+                const text = [recipe.title, recipe.category, ...(recipe.tags || []), ...(recipe.ingredients || []).map(ingredientText)].join(" ").toLocaleLowerCase("de");
+                return (!query || text.includes(query)) && [...selectedTags].every(tag => (recipe.tags || []).includes(tag));
+            });
+            document.querySelector("#result-count").textContent = `${matches.length} ${matches.length === 1 ? "Rezept" : "Rezepte"}`;
+            recipeList.innerHTML = matches.length ? matches.map(recipe => `
+                <article class="card" id="recipe-${escapeHtml(recipe.id)}" tabindex="-1">
+                    ${recipe.image ? `<img class="recipe-image" src="${escapeHtml(recipe.image)}" alt="${escapeHtml(recipe.imageAlt || recipe.title)}" loading="lazy">` : ""}
+                    <div class="recipe-content">
+                        <div class="recipe-topline"><span class="recipe-category">${escapeHtml(recipe.category || "Rezept")}</span>${recipe.servings ? `<span>${escapeHtml(recipe.servings)}</span>` : ""}</div>
+                        <h2 class="card-title">${escapeHtml(recipe.title)}</h2>
+                        <div class="recipe-tags">${(recipe.tags || []).map(tag => `<span class="recipe-tag">${escapeHtml(tag)}</span>`).join("")}</div>
+                        ${recipe.description ? `<p class="recipe-description">${escapeHtml(recipe.description)}</p>` : ""}
+                        ${(recipe.ingredients || []).length ? `<section class="recipe-section"><h3>Zutaten</h3><ul class="ingredients-list">${recipe.ingredients.map(item => `<li>${renderIngredient(item)}</li>`).join("")}</ul></section>` : ""}
+                        ${(recipe.steps || []).length ? `<section class="recipe-section"><h3>Zubereitung</h3><ol class="steps-list">${recipe.steps.map(step => `<li>${escapeHtml(step)}</li>`).join("")}</ol></section>` : ""}
+                    </div>
+                </article>`).join("") : `<p class="empty-state">Keine passenden Rezepte gefunden. Passe die Suche oder Tags an.</p>`;
+        }
+
+        search.addEventListener("input", renderRecipes);
+        recipeList.addEventListener("click", event => {
+            const link = event.target.closest("a[data-recipe-link]");
+            if (!link) return;
+            const targetId = link.getAttribute("href").slice(1);
+            if (document.getElementById(targetId)) return;
+            event.preventDefault();
+            selectedTags.clear();
+            search.value = "";
+            tagFilters.querySelectorAll("input").forEach(input => input.checked = false);
+            renderRecipes();
+            requestAnimationFrame(() => {
+                const target = document.getElementById(targetId);
+                if (target) {
+                    history.replaceState(null, "", `#${targetId}`);
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    target.focus({ preventScroll: true });
+                }
+            });
+        });
+        document.querySelector("#clear-filters").addEventListener("click", () => {
+            selectedTags.clear();
+            search.value = "";
+            tagFilters.querySelectorAll("input").forEach(input => input.checked = false);
+            renderRecipes();
+        });
+        async function loadRecipes() {
+            try {
+                const manifestResponse = await fetch("recipes/manifest.json");
+                if (!manifestResponse.ok) throw new Error("Rezeptliste konnte nicht geladen werden.");
+                const recipeFiles = await manifestResponse.json();
+                recipes = await Promise.all(recipeFiles.map(async file => {
+                    const response = await fetch(`recipes/${encodeURIComponent(file)}`);
+                    if (!response.ok) throw new Error(`Rezeptdatei ${file} konnte nicht geladen werden.`);
+                    return response.json();
+                }));
+                renderTagFilters();
+                renderRecipes();
+            } catch (error) {
+                document.querySelector("#result-count").textContent = "";
+                const message = location.protocol === "file:"
+                    ? "Der Browser blockiert das Laden der Rezeptdateien, wenn index.html direkt geöffnet wird. Starte einen lokalen Webserver (siehe README) und öffne die angezeigte localhost-Adresse."
+                    : "Rezepte konnten nicht geladen werden. Prüfe, ob die Dateien im Ordner recipes vorhanden sind, und lade die Seite erneut.";
+                recipeList.innerHTML = `<p class="empty-state">${message}</p>`;
+                console.error(error);
+            }
+        }
+        loadRecipes();
+    </script>
 </body>
-
 </html>
